@@ -104,3 +104,6 @@ venv.bak/
 .mypy_cache/
 .vscode
 tmp/
+
+data/*.vec
+data/*.txt

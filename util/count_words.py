@@ -1,17 +1,10 @@
-'''
-  @Author: DongGaocai 
-  @Date: 2018-12-29 15:16:57 
-  @Last Modified by: DongGaocai 
-  @Last Modified time: 2018-12-29 15:16:57 
-'''
-import io
-import sys
-#改变标准输出的默认编码
-sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
+from util import conf_util
+
+conf = conf_util.get_default_config()
 
 # count the number of the words in the txt, including drop the same words
 L = []
-with open('further corpus.txt',encoding='utf-8') as f:
+with open(conf["shorten_corpus_path"], encoding='utf-8') as f:
     text = f.read()
     L = L + text.split()
 print('一共有{}个词'.format(len(L)))

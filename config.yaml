@@ -1,0 +1,5 @@
+data_path: ./data/AImed.xml
+corpus_path: ./data/corpus.txt
+shorten_corpus_path: ./data/shorten_corpus.txt
+model_path: ./data/AImed.vec
+label_path: ./data/label.txt

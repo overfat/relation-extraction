@@ -1,9 +1,4 @@
-'''
-  @Author: DongGaocai 
-  @Date: 2018-12-29 15:51:12 
-  @Last Modified by: DongGaocai 
-  @Last Modified time: 2018-12-29 15:51:12 
-'''
+
 import warnings, os, pickle, nltk
 warnings.filterwarnings(action='ignore', category=UserWarning, module='gensim')
 from gensim.models import FastText
@@ -27,7 +22,7 @@ def get_fasttext_feature(word):
 # get the pos vector
 # sentences = list()
 pos_tag = list()
-with open("further corpus.txt","r",encoding="utf-8") as f:
+with open("./data/shorten_corpus.txt","r",encoding="utf-8") as f:
     lines = f.readlines()
     for line in lines:
         temp = list()
@@ -47,12 +42,16 @@ def get_pos_feature(sentence):
     templist = list()
     word_token = nltk.word_tokenize(sentence)
     p_result = nltk.pos_tag(word_token)
+    
+    # import pdb; pdb.set_trace()
+
     for item in p_result:
         templist.append(item[1])
     str = " ".join(templist)
     return vectorizer.transform([str]).toarray()[0]
 
-
+# if __name__ == "__main__":
+#     get_pos_feature('how are you')
 
 
     
